@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Emotion Detection</h1>
+        <form id="uploadForm" action="/predict" method="post" enctype="multipart/form-data">
+            <input type="file" id="audioFile" name="file" accept=".wav, .mp3">
+            <button type="submit" id="predictButton">Predict</button>
+        </form>
+        <div id="predictionResult" class="hidden">
+            <p>Predicted emotion: <span id="emotion"></span></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
